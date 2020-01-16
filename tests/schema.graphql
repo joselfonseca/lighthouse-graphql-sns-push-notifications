@@ -1,0 +1,13 @@
+type User @model(class: "Joselfonseca\\LighthouseSnsPushNotifications\\Tests\\User"){
+    id: ID!
+    name: String!
+    email: String!
+}
+
+type Query {
+    me: User @auth @guard(with: ["api"])
+}
+
+type Mutation {
+    createUser: User @create(model: "Joselfonseca\\LighthouseSnsPushNotifications\\Tests\\User")
+}

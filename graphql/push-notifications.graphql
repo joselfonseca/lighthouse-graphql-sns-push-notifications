@@ -1,0 +1,13 @@
+type PushNotificationToken {
+    push_token: String!
+    endpoint_arn: String!
+    user: User!
+}
+
+input RegisterPushTokenInput {
+    push_token: String! @rules(apply: ["required", "string"])
+}
+
+extend type Mutation {
+    registerPushToken(input: RegisterPushTokenInput @spread): PushNotificationToken! @field(resolver: "Joselfonseca\\LighthouseSnsPushNotifications\\GraphQL\\Mutations\\RegisterPushToken")
+}

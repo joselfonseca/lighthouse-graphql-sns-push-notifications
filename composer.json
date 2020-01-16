@@ -1,0 +1,51 @@
+{
+    "name": "joselfonseca/lighthouse-graphql-sns-push-notifications",
+    "description": "GraphQL mutations for registering devices and sending push notifications with AWS SNS",
+    "keywords": [
+        "joselfonseca",
+        "lighthouse-graphql-sns-push-notifications"
+    ],
+    "homepage": "https://github.com/joselfonseca/lighthouse-graphql-sns-push-notifications",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Fonseca",
+            "email": "jose@ditecnologia.com",
+            "homepage": "https://joselfonseca.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "nuwave/lighthouse": "^3.0|^4.0",
+        "laravel/passport": "^7.0|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^8.0",
+        "orchestra/testbench": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joselfonseca\\LighthouseSnsPushNotifications\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Joselfonseca\\LighthouseSnsPushNotifications\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Joselfonsea\\LighthouseSnsPushNotifications\\SnsPushNotificationsServiceProvider"
+            ]
+        }
+    }
+}
