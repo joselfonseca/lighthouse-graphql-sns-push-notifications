@@ -40,13 +40,12 @@ class RegisterPushToken
     {
         $user = $context->user();
         $response = $this->gateway->registerPushToken($user, $args['push_token']);
-        $token = PushToken::create([
+        PushToken::where(['user_id' => $user->id, 'active' => 1])->update(['active' => 0]);
+        return PushToken::create([
             'user_id' => $user->id,
             'endpoint_arn' => $response['EndpointArn'],
             'push_token' => $args['push_token'],
-            'active' => 1]
-        );
-        PushToken::where('id', '!=', $token->id)->where('user_id', $user->id)->update(['active' => 0]);
-        return $token;
+            'active' => 1
+        ]);
     }
 }
