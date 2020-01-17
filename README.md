@@ -3,7 +3,7 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/joselfonseca/lighthouse-graphql-sns-push-notifications.svg?style=flat-square)](https://packagist.org/packages/joselfonseca/lighthouse-graphql-sns-push-notifications)
 [![Total Downloads](https://img.shields.io/packagist/dt/joselfonseca/lighthouse-graphql-sns-push-notifications.svg?style=flat-square)](https://packagist.org/packages/joselfonseca/lighthouse-graphql-sns-push-notifications)
 
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+**Package in development, not suitable for production use yet**
 
 ## Installation
 
