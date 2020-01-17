@@ -3,12 +3,13 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Client ID
+    | AWS SNS configuration
     |--------------------------------------------------------------------------
     |
-    | The passport client id to use for requesting tokens, this should
-    | support the password grant
+    | The platform ARN and other possible configurations for SNS
     |
     */
-    'client_id' => env('PASSPORT_CLIENT_ID', '1'),
+    'aws' => [
+        'sns_platform_arn' => env('AWS_SNS_PLATFORM_ARN')
+    ]
 ];

@@ -44,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Joselfonsea\\LighthouseSnsPushNotifications\\SnsPushNotificationsServiceProvider"
+                "Joselfonseca\\LighthouseSnsPushNotifications\\Providers\\SnsPushNotificationsServiceProvider"
             ]
         }
     }
