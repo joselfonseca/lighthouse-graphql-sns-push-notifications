@@ -3,6 +3,8 @@
 namespace Joselfonseca\LighthouseSnsPushNotifications\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Joselfonseca\LighthouseSnsPushNotifications\Gateways\AwsSnsGateway;
+use Joselfonseca\LighthouseSnsPushNotifications\Gateways\AwsSnsGatewayContract;
 use Nuwave\Lighthouse\Events\BuildSchemaString;
 
 class SnsPushNotificationsServiceProvider extends ServiceProvider
@@ -12,6 +14,9 @@ class SnsPushNotificationsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (config('lighthouse-sns-push-notifications.migrations', true)) {
+            $this->loadMigrationsFrom(__DIR__.'/../../migrations');
+        }
         app('events')->listen(
             BuildSchemaString::class,
             function (): string {
@@ -30,6 +35,7 @@ class SnsPushNotificationsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerConfig();
+        $this->app->bind(AwsSnsGatewayContract::class, AwsSnsGateway::class);
     }
 
     /**

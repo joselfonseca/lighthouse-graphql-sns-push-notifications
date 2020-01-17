@@ -2,6 +2,8 @@
 
 namespace Joselfonseca\LighthouseSnsPushNotifications\Tests;
 
+use Joselfonseca\LighthouseSnsPushNotifications\Gateways\AwsSnsGatewayContract;
+use Joselfonseca\LighthouseSnsPushNotifications\Gateways\FakeAwsSnsGateway;
 use Laravel\Passport\Passport;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
@@ -12,4 +14,5 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
         Passport::routes();
         Passport::loadKeysFrom(__DIR__.'/storage/');
     }
+
 }

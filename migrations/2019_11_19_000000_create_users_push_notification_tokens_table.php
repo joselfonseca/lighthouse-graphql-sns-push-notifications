@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersPushNotificationsTokensTable extends Migration
+class CreateUsersPushNotificationTokensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateUsersPushNotificationsTokensTable extends Migration
      */
     public function up()
     {
-        Schema::table('users_push_tokens', function (Blueprint $table) {
+        Schema::create('users_push_tokens', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
             $table->string('push_token');
             $table->string('endpoint_arn');

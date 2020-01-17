@@ -2,12 +2,12 @@
 
 namespace Joselfonseca\LighthouseSnsPushNotifications;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait HasPushTokens
 {
-    public function pushTokens() : BelongsTo
+    public function pushTokens() : HasMany
     {
-        return $this->belongsTo(PushToken::class);
+        return $this->hasMany(PushToken::class);
     }
 }
