@@ -5,8 +5,8 @@ namespace Joselfonseca\LighthouseSnsPushNotifications\Tests;
 use Joselfonseca\LighthouseSnsPushNotifications\Providers\SnsPushNotificationsServiceProvider;
 use Laravel\Passport\PassportServiceProvider;
 use Nuwave\Lighthouse\LighthouseServiceProvider;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Nuwave\Lighthouse\Testing\MakesGraphQLRequests;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

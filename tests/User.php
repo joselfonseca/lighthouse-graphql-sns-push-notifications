@@ -4,8 +4,8 @@ namespace Joselfonseca\LighthouseSnsPushNotifications\Tests;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
 use Joselfonseca\LighthouseSnsPushNotifications\HasPushTokens;
+use Laravel\Passport\HasApiTokens;
 
 /**
  * Class User.
