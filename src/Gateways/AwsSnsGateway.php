@@ -19,13 +19,18 @@ class AwsSnsGateway implements AwsSnsGatewayContract
      */
     public function registerPushToken($user, $push_token)
     {
-        $client = app(SnsClient::class);
+        $client = new SnsClient([
+            'key'    => config('services.sns.key'),
+            'secret' => config('services.sns.secret'),
+            'region' => config('services.sns.region'),
+            'version' => 'latest',
+        ]);
         return $client->createPlatformEndpoint([
-            'PlatformApplicationArn' => config('services.aws.sns_platform_arn'),
-            'Token' => $push_token['push_token'],
-            'CustomUserData' => [
+            'PlatformApplicationArn' => config('services.sns.platform_arn'),
+            'Token' => $push_token,
+            'CustomUserData' => json_encode([
                 'id' => $user->id
-            ]
+            ])
         ]);
     }
 }

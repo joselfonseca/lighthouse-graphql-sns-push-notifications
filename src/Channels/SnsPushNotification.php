@@ -18,7 +18,12 @@ class SnsPushNotification
     public function send($notifiable, Notification $notification)
     {
         $message = $notification->toSnsPushNotification($notifiable);
-        $client = app(SnsClient::class);
+        $client = new SnsClient([
+            'key'    => config('services.sns.key'),
+            'secret' => config('services.sns.secret'),
+            'region' => config('services.sns.region'),
+            'version' => 'latest',
+        ]);
         $payload = json_encode([
             'aps' => [
                 'alert' => [
